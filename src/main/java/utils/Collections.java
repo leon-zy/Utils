@@ -1,10 +1,8 @@
 package main.java.utils;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import org.dozer.DozerBeanMapper;
-import com.google.common.collect.Lists;
 
 /**
  * Collections
@@ -20,7 +18,7 @@ public class Collections {
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static <T> List<T> copyList(Collection collection, Class<T> clazz) throws IllegalAccessException {
-        List destinationList = Lists.newArrayList();
+        List destinationList = new ArrayList();
         if(!isEmpty(collection)){
             DozerBeanMapper doze = new DozerBeanMapper();
             for (Iterator i$ = collection.iterator(); i$.hasNext();) {
